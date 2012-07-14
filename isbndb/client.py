@@ -185,7 +185,7 @@ class ISBNdbClient(object):
 
         self.url = "".join([base_url, variables])
 
-        return "".join(urllib.urlopen(self.url).readlines()).replace("\n", "")
+        return "".join(urllib.urlopen(self.url).readlines())
 
     def request_book(self, index1, value1, results=None, page=None):
 
