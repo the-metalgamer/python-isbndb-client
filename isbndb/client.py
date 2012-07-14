@@ -113,16 +113,16 @@ class ISBNdbClient(object):
         """
         Creates the url and returns it results.
 
-        @param index1 the index1 of the request, needs to be a string
-        @param value1 the value1 of the request, needs to be a string
-        @param results_regex_object the regex to match results, needs to be a
+        @param index1: the index1 of the request, needs to be a string
+        @param value1: the value1 of the request, needs to be a string
+        @param results_regex_object: the regex to match results, needs to be a
         regex object
-        @param index1_regex_object the regex to match index1, needs to be a
+        @param index1_regex_object: the regex to match index1, needs to be a
         regex object
-        @param base_url the base url, needs to be a string
-        @param results if None, don't include results, else include it. Needs
+        @param base_url: the base url, needs to be a string
+        @param results: if None, don't include results, else include it. Needs
         to be None or a string.
-        @param page the page_number must be None or a int
+        @param page: the page_number must be None or a int
         """
 
         if results is not None:
@@ -192,12 +192,12 @@ class ISBNdbClient(object):
         """
         Requests book collections
 
-        @param index1 the index1 of the request, needs to be a string and
+        @param index1: the index1 of the request, needs to be a string and
         match isbn|title|combined|full|book_id|person_id|publisher_id|subject_id|dewey_decimal|lcc_number
-        @param value1 the value 1 of the request, needs to be a string
-        @param results if None, don't include results, else include it. Needs
+        @param value1: the value 1 of the request, needs to be a string
+        @param results: if None, don't include results, else include it. Needs
         to be None or a string, that matches keystats|args|details|texts|prices|pricehistory|subjects|marc|authors.
-        @param page the page_number must be None or a int
+        @param page: the page_number must be None or a int
         """
 
         return self._request(index1=index1, value1=value1,
@@ -210,12 +210,12 @@ class ISBNdbClient(object):
         """
         Request subjects collections
 
-        @param index1 the index1 of the request, needs to be a string and
+        @param index1: the index1 of the request, needs to be a string and
         match name|category_id|subject_id
-        @param value1 the value1 of the request, needs to be a string
-        @param results if None, don't include results, else include it. Needs
+        @param value1: the value1 of the request, needs to be a string
+        @param results: if None, don't include results, else include it. Needs
         to be None or a string, that matches keystats|args|categories|structure
-        @param page the page_number must be None or a int
+        @param page: the page_number must be None or a int
         """
 
         return self._request(index1=index1, value1=value1,
@@ -228,12 +228,12 @@ class ISBNdbClient(object):
         """
         Request categories collections
 
-        @param index1 the index1 of the request, needs to be a string and match
+        @param index1: the index1 of the request, needs to be a string and match
         name|category_id|parent_id
-        @param value the value1 of the request, needs to be a string
-        @param results if None, don't include results, else include it. Needs
+        @param value1: the value1 of the request, needs to be a string
+        @param results: if None, don't include results, else include it. Needs
         to be None or string, that matches keystats|args|details|subcategories
-        @param page the page_number must be None or a int
+        @param page: the page_number must be None or a int
         """
 
         return self._request(index1=index1, value1=value1,
@@ -242,15 +242,16 @@ class ISBNdbClient(object):
                              base_url=CATEGORIES_URL, results=results, page=page)
 
     def request_authors(self, index1, value1, results=None, page=None):
+
         """
         Request authors collections
 
-        @param index1 the index1 of the request, needs to be a string and match
+        @param index1: the index1 of the request, needs to be a string and match
         name|person_id
-        @param value1 the value1 of the request, needs to be a string
-        @param results if None, don't include results, else include it. Needs
+        @param value1: the value1 of the request, needs to be a string
+        @param results: if None, don't include results, else include it. Needs
         to be None or string, that matches keystats|args|details|categories|subjects
-        @param page the page_number must be None or a int
+        @param page: the page_number must be None or a int
         """
 
         return self._request(index1=index1, value1=value1,
@@ -263,12 +264,12 @@ class ISBNdbClient(object):
         """
         Request publishers collections
 
-        @param index1 the index1 of the request, needs to be a string and match
+        @param index1: the index1 of the request, needs to be a string and match
         name|publisher_id
-        @param value1 the value1 of the request, needs to be a string
-        @param results if None, don't include results, else include it. Needs
+        @param value1: the value1 of the request, needs to be a string
+        @param results: if None, don't include results, else include it. Needs
         to be None or string, that matches keystats|args|details|categories
-        @param page the page_number must be None or a int
+        @param page: the page_number must be None or a int
         """
 
         return self._request(index1=index1, value1=value1,
