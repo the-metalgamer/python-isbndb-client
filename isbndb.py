@@ -125,14 +125,17 @@ class ISBNdbClient(object):
         """
 
         if results is not None:
-            try:
-                if results_regex_object.match(results):
-                    self.results = results
-                else:
-                    raise ValueError(" ".join(["results must match",
+            if isinstance(results, str):
+                try:
+                    if results_regex_object.match(results):
+                        self.results = results
+                    else:
+                        raise ValueError(" ".join(["results must match",
                                      results_regex_object.pattern]))
-            except AttributeError:
-                raise TypeError("results_regex_object must be regex object")
+                except AttributeError:
+                    raise TypeError("results_regex_object must be regex object")
+            else:
+                raise TypeError("results must be a string or None")
         else:
             self.results = False
 
